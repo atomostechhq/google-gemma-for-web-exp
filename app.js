@@ -1,4 +1,5 @@
 import {FilesetResolver, LlmInference} from 'https://cdn.jsdelivr.net/npm/@mediapipe/tasks-genai';
+import {updateOutputWithMarkdown} from './markdown-handler.js';
 
 const input = document.getElementById('input');
 const output = document.getElementById('output');
@@ -6,12 +7,15 @@ const submit = document.getElementById('submit');
 
 const modelFileName = './assets/gemma-2b-it-gpu-int8.bin'; 
 
+let currentOutput = '';
+
 function displayPartialResults(partialResults, complete) {
-  output.textContent += partialResults;
+  currentOutput += partialResults;
+  updateOutputWithMarkdown(output, currentOutput);
 
   if (complete) {
-    if (!output.textContent) {
-      output.textContent = 'Result is empty';
+    if (!currentOutput) {
+      updateOutputWithMarkdown(output, 'Result is empty');
     }
     submit.disabled = false;
     submit.classList.remove('loading');
@@ -25,7 +29,8 @@ async function runDemo() {
   let llmInference;
 
   submit.onclick = () => {
-    output.textContent = '';
+    currentOutput = '';
+    output.innerHTML = '';
     submit.disabled = true;
     submit.classList.add('loading');
     llmInference.generateResponse(input.value, displayPartialResults);

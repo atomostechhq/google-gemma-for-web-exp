@@ -4,6 +4,8 @@
     <title>LLM Inference Web Demo</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>window.onload = function() { if(!window.marked) console.error('Marked library failed to load properly'); }</script>
 </head>
 <body class="bg-gray-50 min-h-screen p-8">
     <div class="max-w-4xl mx-auto space-y-8">
@@ -17,7 +19,7 @@
             
             <div class="mt-8">
                 <label for="output" class="block text-sm font-medium text-gray-700">Result</label>
-                <textarea id="output" class="w-full h-64 p-4 mt-2 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary resize-none" readonly></textarea>
+                <div id="output" class="w-full h-64 p-4 mt-2 bg-white border border-gray-300 rounded-lg overflow-auto prose prose-sm max-w-none"></div>
             </div>
         </div>
     </div>
