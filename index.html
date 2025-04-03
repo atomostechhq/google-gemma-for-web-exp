@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>LLM Inference Web Demo</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 min-h-screen p-8">
+    <div class="max-w-4xl mx-auto space-y-8">
+        <h1 class="text-3xl font-bold text-gray-900">LLM Inference Web Demo</h1>
+        
+        <div class="space-y-4">
+            <label for="input" class="block text-sm font-medium text-gray-700">Input</label>
+            <textarea id="input" class="w-full h-64 p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary resize-none" placeholder="Enter your prompt here..."></textarea>
+            
+            <button id="submit" class="custom-button" disabled>Get Response</button>
+            
+            <div class="mt-8">
+                <label for="output" class="block text-sm font-medium text-gray-700">Result</label>
+                <textarea id="output" class="w-full h-64 p-4 mt-2 bg-white border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary resize-none" readonly></textarea>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+# Model Setup Instructions
+
+1. Model File Requirements:
+   - Required model file: gemma-2b-it-gpu-int8.bin
+   - Place the model file in this folder (assets/)
+
+2. Downloading the Model:
+   a. Set up Kaggle authentication:
+      - Create a Kaggle account if you don't have one
+      - Go to your Kaggle account settings
+      - Generate an API token (downloads kaggle.json)
+      - Copy your username and API key
+
+   b. Run get_model.sh:
+      - Open get_model.sh and replace:
+        <YOUR USERNAME> with your Kaggle username
+        <YOUR KAGGLE KEY> with your Kaggle API key
+      - Make the script executable: chmod +x get_model.sh
+      - Run: ./get_model.sh
+
+3. After Download:
+   - Extract the downloaded model.tar.gz
+   - Move the extracted model file to this folder
+   - Ensure the file is named exactly as: gemma-2b-it-gpu-int8.bin
