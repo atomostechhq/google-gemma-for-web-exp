@@ -22,7 +22,7 @@ This project demonstrates how to run Google's Gemma language model directly in t
 
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/atomostechhq/google-gemma-for-web-exp.git
    cd google-gemma-for-web-exp
    ```
 
